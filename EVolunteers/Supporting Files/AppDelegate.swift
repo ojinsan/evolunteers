@@ -8,14 +8,14 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
@@ -70,7 +70,7 @@ extension AppDelegate {
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
 //        let managedContext = appDelegate.persistentContainer.viewContext
 //        for food in foods {
-//            let nFood = NSEntityDescription.insertNewObject(forEntityName: "FoodInTakes", into: managedContext)
+//            let nFood = NSEntityDescription.insertNewObject(forEntityName: "Programs", into: managedContext)
 //            nFood.setValue(food.id, forKey: "id")
 //        }
 //        do {
