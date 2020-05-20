@@ -13,6 +13,12 @@ class ProgramsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Safe Present
+        if let vc = UIStoryboard(name: "NewProgramViewController", bundle: nil).instantiateViewController(withIdentifier: "NewProgramViewController") as? NewProgramViewController
+        {
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
         // Do any additional setup after loading the view.
     }
     
