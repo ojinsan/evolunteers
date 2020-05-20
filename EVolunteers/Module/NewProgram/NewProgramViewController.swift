@@ -1,24 +1,18 @@
 //
-//  ProgramsViewController.swift
+//  NewProgramViewController.swift
 //  EVolunteers
 //
-//  Created by Dedy Yuristiawan on 12/05/20.
+//  Created by Fauzan Ramadhan on 18/05/20.
 //  Copyright © 2020 Dedy Yuristiawan. All rights reserved.
 //
 
 import UIKit
 
-class ProgramsViewController: UIViewController {
+class NewProgramViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Safe Present
-        if let vc = UIStoryboard(name: "NewProgramViewController", bundle: nil).instantiateViewController(withIdentifier: "NewProgramViewController") as? NewProgramViewController
-        {
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
-        }
         // Do any additional setup after loading the view.
     }
     
