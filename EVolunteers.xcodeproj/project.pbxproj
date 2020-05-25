@@ -28,6 +28,12 @@
 		5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */; };
 		5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273BA0246A3C8900505C8D /* ProfileViewController.swift */; };
 		5C273BA3246A3C9300505C8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C273BA2246A3C9300505C8D /* Profile.storyboard */; };
+		5C926F23247BA5E3009AFD19 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C926F22247BA5E2009AFD19 /* CloudKit.framework */; };
+		5C926F30247BEBC0009AFD19 /* CK_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F2F247BEBC0009AFD19 /* CK_User.swift */; };
+		5C926F33247BEC90009AFD19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F32247BEC90009AFD19 /* LoginViewController.swift */; };
+		5C926F35247BEF35009AFD19 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F34247BEF35009AFD19 /* Login.storyboard */; };
+		5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */; };
+		5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F3D247C46E1009AFD19 /* CloudKitService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,13 @@
 		5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewController.swift; sourceTree = "<group>"; };
 		5C273BA0246A3C8900505C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C273BA2246A3C9300505C8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5C926F20247BA5C2009AFD19 /* EVolunteers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EVolunteers.entitlements; sourceTree = "<group>"; };
+		5C926F22247BA5E2009AFD19 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5C926F2F247BEBC0009AFD19 /* CK_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK_User.swift; sourceTree = "<group>"; };
+		5C926F32247BEC90009AFD19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5C926F34247BEF35009AFD19 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitProtocol.swift; sourceTree = "<group>"; };
+		5C926F3D247C46E1009AFD19 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C926F23247BA5E3009AFD19 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +132,7 @@
 				5C273B5F246A35F800505C8D /* EVolunteersTests */,
 				5C273B6A246A35F800505C8D /* EVolunteersUITests */,
 				5C273B47246A35F600505C8D /* Products */,
+				5C926F21247BA5E2009AFD19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +149,7 @@
 		5C273B48246A35F600505C8D /* EVolunteers */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F20247BA5C2009AFD19 /* EVolunteers.entitlements */,
 				5C273B7F246A38E700505C8D /* Extenstion */,
 				5C273B84246A38E700505C8D /* Helper */,
 				5C273B7A246A385600505C8D /* Module */,
@@ -176,6 +192,7 @@
 		5C273B7A246A385600505C8D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F31247BEC82009AFD19 /* Login */,
 				1E6DE6A12474AF9800645C3C /* NewProgram */,
 				5C273B97246A3BFB00505C8D /* Activity */,
 				5C273B96246A3BF600505C8D /* Programs */,
@@ -207,6 +224,7 @@
 		5C273B84246A38E700505C8D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F36247BFD8F009AFD19 /* CloudKit */,
 				5C273B85246A38E700505C8D /* PreferenceManager.swift */,
 			);
 			path = Helper;
@@ -217,6 +235,7 @@
 			children = (
 				5C273BA0246A3C8900505C8D /* ProfileViewController.swift */,
 				5C273BA2246A3C9300505C8D /* Profile.storyboard */,
+				5C926F2F247BEBC0009AFD19 /* CK_User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -237,6 +256,32 @@
 				5C273B9A246A3C3C00505C8D /* Activity.storyboard */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		5C926F21247BA5E2009AFD19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F22247BA5E2009AFD19 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C926F31247BEC82009AFD19 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F32247BEC90009AFD19 /* LoginViewController.swift */,
+				5C926F34247BEF35009AFD19 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5C926F36247BFD8F009AFD19 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F3D247C46E1009AFD19 /* CloudKitService.swift */,
+				5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */,
+			);
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C926F35247BEF35009AFD19 /* Login.storyboard in Resources */,
 				5C273BA3246A3C9300505C8D /* Profile.storyboard in Resources */,
 				5C273B91246A3B3B00505C8D /* MainTabbar.storyboard in Resources */,
 				5C273B56246A35F800505C8D /* LaunchScreen.storyboard in Resources */,
@@ -374,11 +420,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */,
 				5C273B8A246A38E700505C8D /* UIViewController+Extension.swift in Sources */,
 				5C273B86246A38E700505C8D /* CoreData.xcdatamodeld in Sources */,
+				5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */,
+				5C926F33247BEC90009AFD19 /* LoginViewController.swift in Sources */,
 				5C273B89246A38E700505C8D /* UIView+Extension.swift in Sources */,
 				5C273B8B246A38E700505C8D /* PreferenceManager.swift in Sources */,
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
+				5C926F30247BEBC0009AFD19 /* CK_User.swift in Sources */,
 				5C273B94246A3BDD00505C8D /* MainTabBarController.swift in Sources */,
 				1E6DE6A52474AF9800645C3C /* NewProgramViewController.swift in Sources */,
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
@@ -550,15 +600,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
+				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteerss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -568,15 +622,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
+				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteerss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
