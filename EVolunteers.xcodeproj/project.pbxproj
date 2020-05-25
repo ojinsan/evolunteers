@@ -26,6 +26,7 @@
 		5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */; };
 		5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273BA0246A3C8900505C8D /* ProfileViewController.swift */; };
 		5C273BA3246A3C9300505C8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C273BA2246A3C9300505C8D /* Profile.storyboard */; };
+		CE50BAEA247B9AA200D04786 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE50BAE9247B9AA200D04786 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewController.swift; sourceTree = "<group>"; };
 		5C273BA0246A3C8900505C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C273BA2246A3C9300505C8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CE50BAE9247B9AA200D04786 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CEDFB954247A732A003A744A /* EVolunteers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EVolunteers.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE50BAEA247B9AA200D04786 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +109,7 @@
 				5C273B5F246A35F800505C8D /* EVolunteersTests */,
 				5C273B6A246A35F800505C8D /* EVolunteersUITests */,
 				5C273B47246A35F600505C8D /* Products */,
+				CE50BAE8247B9AA200D04786 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +126,7 @@
 		5C273B48246A35F600505C8D /* EVolunteers */ = {
 			isa = PBXGroup;
 			children = (
+				CEDFB954247A732A003A744A /* EVolunteers.entitlements */,
 				5C273B7F246A38E700505C8D /* Extenstion */,
 				5C273B84246A38E700505C8D /* Helper */,
 				5C273B7A246A385600505C8D /* Module */,
@@ -223,6 +229,14 @@
 				5C273B9A246A3C3C00505C8D /* Activity.storyboard */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		CE50BAE8247B9AA200D04786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE50BAE9247B9AA200D04786 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,8 +548,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52CL477F5B;
+				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,8 +569,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52CL477F5B;
+				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,6 +580,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
