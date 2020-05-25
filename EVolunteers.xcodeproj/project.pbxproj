@@ -81,7 +81,6 @@
 		5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewController.swift; sourceTree = "<group>"; };
 		5C273BA0246A3C8900505C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C273BA2246A3C9300505C8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		5C926F20247BA5C2009AFD19 /* EVolunteers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EVolunteers.entitlements; sourceTree = "<group>"; };
 		5C926F22247BA5E2009AFD19 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5C926F2F247BEBC0009AFD19 /* CK_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK_User.swift; sourceTree = "<group>"; };
 		5C926F32247BEC90009AFD19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 		5C273B48246A35F600505C8D /* EVolunteers */ = {
 			isa = PBXGroup;
 			children = (
-				5C926F20247BA5C2009AFD19 /* EVolunteers.entitlements */,
 				5C273B7F246A38E700505C8D /* Extenstion */,
 				5C273B84246A38E700505C8D /* Helper */,
 				5C273B7A246A385600505C8D /* Module */,
