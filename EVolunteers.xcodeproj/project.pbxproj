@@ -601,14 +601,14 @@
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52CL477F5B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteerss;
+				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -623,14 +623,14 @@
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52CL477F5B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteerss;
+				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
