@@ -38,6 +38,11 @@
 		5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F3D247C46E1009AFD19 /* CloudKitService.swift */; };
 		5C926F42247CBE3E009AFD19 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */; };
 		5C926F43247CBE3E009AFD19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F41247CBE3E009AFD19 /* Category.swift */; };
+		5C926F51247D9611009AFD19 /* UserActivitiesLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F4D247D9611009AFD19 /* UserActivitiesLog.swift */; };
+		5C926F52247D9611009AFD19 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F4F247D9611009AFD19 /* CollectionViewCell.swift */; };
+		5C926F53247D9611009AFD19 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F50247D9611009AFD19 /* CollectionViewCell.xib */; };
+		5C926F56247D9638009AFD19 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F54247D9638009AFD19 /* EditProfileVC.swift */; };
+		5C926F57247D9638009AFD19 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F55247D9638009AFD19 /* EditProfile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		5C926F3D247C46E1009AFD19 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		5C926F41247CBE3E009AFD19 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5C926F4D247D9611009AFD19 /* UserActivitiesLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivitiesLog.swift; sourceTree = "<group>"; };
+		5C926F4F247D9611009AFD19 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5C926F50247D9611009AFD19 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		5C926F54247D9638009AFD19 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		5C926F55247D9638009AFD19 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +258,8 @@
 		5C273B95246A3BEF00505C8D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F55247D9638009AFD19 /* EditProfile.storyboard */,
+				5C926F54247D9638009AFD19 /* EditProfileVC.swift */,
 				5C273BA0246A3C8900505C8D /* ProfileViewController.swift */,
 				5C273BA2246A3C9300505C8D /* Profile.storyboard */,
 				5C926F2F247BEBC0009AFD19 /* CK_User.swift */,
@@ -270,6 +282,8 @@
 		5C273B97246A3BFB00505C8D /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F4E247D9611009AFD19 /* Cell */,
+				5C926F4C247D9611009AFD19 /* Model */,
 				5C273B98246A3C2700505C8D /* MyActivityViewController.swift */,
 				5C273B9A246A3C3C00505C8D /* Activity.storyboard */,
 			);
@@ -308,6 +322,23 @@
 				5C926F41247CBE3E009AFD19 /* Category.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5C926F4C247D9611009AFD19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F4D247D9611009AFD19 /* UserActivitiesLog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C926F4E247D9611009AFD19 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F4F247D9611009AFD19 /* CollectionViewCell.swift */,
+				5C926F50247D9611009AFD19 /* CollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,8 +451,10 @@
 				1E2E1FDE247CA36800F544CC /* NewProgramViewController.storyboard in Resources */,
 				5C273B56246A35F800505C8D /* LaunchScreen.storyboard in Resources */,
 				5C273B53246A35F800505C8D /* Assets.xcassets in Resources */,
+				5C926F57247D9638009AFD19 /* EditProfile.storyboard in Resources */,
 				5C273B9B246A3C3C00505C8D /* Activity.storyboard in Resources */,
 				5C273B9D246A3C6000505C8D /* Programs.storyboard in Resources */,
+				5C926F53247D9611009AFD19 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,15 +486,18 @@
 				5C926F33247BEC90009AFD19 /* LoginViewController.swift in Sources */,
 				5C926F43247CBE3E009AFD19 /* Category.swift in Sources */,
 				5C926F42247CBE3E009AFD19 /* CategoryViewCell.swift in Sources */,
+				5C926F56247D9638009AFD19 /* EditProfileVC.swift in Sources */,
 				5C273B89246A38E700505C8D /* UIView+Extension.swift in Sources */,
 				5C273B8B246A38E700505C8D /* PreferenceManager.swift in Sources */,
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
+				5C926F52247D9611009AFD19 /* CollectionViewCell.swift in Sources */,
 				5C926F30247BEBC0009AFD19 /* CK_User.swift in Sources */,
 				5C273B94246A3BDD00505C8D /* MainTabBarController.swift in Sources */,
 				1E2E1FDD247CA36800F544CC /* NewProgramViewController.swift in Sources */,
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
 				5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */,
 				5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */,
+				5C926F51247D9611009AFD19 /* UserActivitiesLog.swift in Sources */,
 				42B81528247CD565001E6A2F /* Program.swift in Sources */,
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
@@ -631,9 +667,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -642,7 +678,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,9 +689,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -664,7 +700,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
