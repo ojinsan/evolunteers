@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42CF50EC24741D9B00876746 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF50EB24741D9B00876746 /* Category.swift */; };
+		42CF50EE2474337500876746 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF50ED2474337500876746 /* CategoryViewCell.swift */; };
 		5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B49246A35F600505C8D /* AppDelegate.swift */; };
 		5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B4B246A35F600505C8D /* SceneDelegate.swift */; };
 		5C273B53246A35F800505C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C273B52246A35F800505C8D /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42CF50EB24741D9B00876746 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		42CF50ED2474337500876746 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		5C273B46246A35F600505C8D /* EVolunteers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVolunteers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C273B49246A35F600505C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C273B4B246A35F600505C8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42CF50EA24741D8800876746 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42CF50EB24741D9B00876746 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5C273B3D246A35F600505C8D = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +222,10 @@
 		5C273B96246A3BF600505C8D /* Programs */ = {
 			isa = PBXGroup;
 			children = (
+				42CF50EA24741D8800876746 /* Models */,
 				5C273B9C246A3C6000505C8D /* Programs.storyboard */,
 				5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */,
+				42CF50ED2474337500876746 /* CategoryViewCell.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -365,11 +379,13 @@
 				5C273B8B246A38E700505C8D /* PreferenceManager.swift in Sources */,
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
 				5C273B94246A3BDD00505C8D /* MainTabBarController.swift in Sources */,
+				42CF50EE2474337500876746 /* CategoryViewCell.swift in Sources */,
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
 				5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */,
 				5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */,
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
+				42CF50EC24741D9B00876746 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
