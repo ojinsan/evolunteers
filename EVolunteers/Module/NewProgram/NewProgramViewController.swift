@@ -41,11 +41,7 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
     @IBAction func openCameraAndLibrary(_ sender: UIButton) {
         openCameraAndLibrary()
     }
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()

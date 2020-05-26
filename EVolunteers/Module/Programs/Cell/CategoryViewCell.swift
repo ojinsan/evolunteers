@@ -21,6 +21,12 @@ class CategoryViewCell: UICollectionViewCell {
     
     var categoryCollection: Category! {
         didSet {
+            if categoryCollection.isActived == true {
+                selectedData.isHidden = false
+            } else {
+                selectedData.isHidden = true
+            }
+            
             viewMask.backgroundColor = categoryCollection.colorMask
             categoryLabel.text = categoryCollection.categoryContent
         }
