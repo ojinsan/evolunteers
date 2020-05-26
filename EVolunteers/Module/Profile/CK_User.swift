@@ -38,5 +38,4 @@ class CK_User: CloudKitProtocol, Identifiable, Equatable {
     static func == (lhs: CK_User, rhs: CK_User) -> Bool {
         return lhs.id == rhs.id
     }
-
 }

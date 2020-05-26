@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E2E1FDD247CA36800F544CC /* NewProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E1FDB247CA36800F544CC /* NewProgramViewController.swift */; };
 		1E2E1FDE247CA36800F544CC /* NewProgramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E1FDC247CA36800F544CC /* NewProgramViewController.storyboard */; };
+		42B81528247CD565001E6A2F /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81527247CD565001E6A2F /* Program.swift */; };
+		42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */; };
 		5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B49246A35F600505C8D /* AppDelegate.swift */; };
 		5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B4B246A35F600505C8D /* SceneDelegate.swift */; };
 		5C273B53246A35F800505C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C273B52246A35F800505C8D /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		1E2E1FDB247CA36800F544CC /* NewProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProgramViewController.swift; sourceTree = "<group>"; };
 		1E2E1FDC247CA36800F544CC /* NewProgramViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewProgramViewController.storyboard; sourceTree = "<group>"; };
+		42B81527247CD565001E6A2F /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewCell.swift; sourceTree = "<group>"; };
 		5C273B46246A35F600505C8D /* EVolunteers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVolunteers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C273B49246A35F600505C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C273B4B246A35F600505C8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,15 @@
 				1E2E1FDB247CA36800F544CC /* NewProgramViewController.swift */,
 			);
 			path = NewProgram;
+			sourceTree = "<group>";
+		};
+		42BCF86E247CF7DB0049A10B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */,
+				42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5C273B3D246A35F600505C8D = {
@@ -245,10 +258,11 @@
 		5C273B96246A3BF600505C8D /* Programs */ = {
 			isa = PBXGroup;
 			children = (
-				5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */,
+				42BCF86E247CF7DB0049A10B /* Cell */,
 				5C926F40247CBE3E009AFD19 /* Models */,
 				5C273B9C246A3C6000505C8D /* Programs.storyboard */,
 				5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */,
+				42B81527247CD565001E6A2F /* Program.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -448,8 +462,10 @@
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
 				5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */,
 				5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */,
+				42B81528247CD565001E6A2F /* Program.swift in Sources */,
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
+				42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,8 +632,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,8 +654,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
