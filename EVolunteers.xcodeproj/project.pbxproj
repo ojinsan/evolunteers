@@ -34,6 +34,8 @@
 		5C926F35247BEF35009AFD19 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F34247BEF35009AFD19 /* Login.storyboard */; };
 		5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */; };
 		5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F3D247C46E1009AFD19 /* CloudKitService.swift */; };
+		5C926F42247CBE3E009AFD19 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */; };
+		5C926F43247CBE3E009AFD19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F41247CBE3E009AFD19 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		5C926F34247BEF35009AFD19 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitProtocol.swift; sourceTree = "<group>"; };
 		5C926F3D247C46E1009AFD19 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		5C926F41247CBE3E009AFD19 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 		5C273B96246A3BF600505C8D /* Programs */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F3F247CBE3E009AFD19 /* CategoryViewCell.swift */,
+				5C926F40247CBE3E009AFD19 /* Models */,
 				5C273B9C246A3C6000505C8D /* Programs.storyboard */,
 				5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */,
 			);
@@ -280,6 +286,14 @@
 				5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */,
 			);
 			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		5C926F40247CBE3E009AFD19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C926F41247CBE3E009AFD19 /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +437,8 @@
 				5C273B86246A38E700505C8D /* CoreData.xcdatamodeld in Sources */,
 				5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */,
 				5C926F33247BEC90009AFD19 /* LoginViewController.swift in Sources */,
+				5C926F43247CBE3E009AFD19 /* Category.swift in Sources */,
+				5C926F42247CBE3E009AFD19 /* CategoryViewCell.swift in Sources */,
 				5C273B89246A38E700505C8D /* UIView+Extension.swift in Sources */,
 				5C273B8B246A38E700505C8D /* PreferenceManager.swift in Sources */,
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
