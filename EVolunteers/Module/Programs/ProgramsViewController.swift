@@ -9,22 +9,52 @@
 import UIKit
 
 class ProgramsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var categoryCollection: UICollectionView!
+    var cetegoryColl: [Category] = []
+    
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        self.navigationItem.searchController = search
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpNavigationBar()
+        cetegoryColl = CategoryInit()
+        categoryCollection.dataSource = self
     }
-    */
 
+}
+
+extension ProgramsViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}
+
+extension ProgramsViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cetegoryColl.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QRData", for: indexPath) as! CategoryViewCell
+        
+        
+        let data = cetegoryColl[indexPath.row]
+        
+        cell.categoryCollection = data
+        
+        return cell
+    }
 }
