@@ -103,12 +103,14 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                         Users(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
                             self.dismiss(animated: true, completion: nil)
                         }) { (error) in
+                            self.showViewBottom()
                             print(error)
                         }
                     } else {
                         self.dismiss(animated: true, completion: nil)
                     }
                 }) { (error) in
+                    self.showViewBottom()
                     print(error)
                 }
             }
