@@ -32,7 +32,7 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
     public required init(ckRecord: CKRecord) {
         //self.name = ckRecord["name"]
         // Configure Record
-        self.judulProgram = ckRecord["namaProgram"]
+        self.judulProgram = ckRecord["judulProgram"]
         self.penyelenggara = ckRecord["namaKomunitas"]
         self.kebutuhan = ckRecord["kebutuhanPekerjaan"] as? [String]
         self.kriteria = ckRecord["kriteria"]
