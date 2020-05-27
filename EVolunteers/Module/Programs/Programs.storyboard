@@ -155,14 +155,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vm-Cu-9yz">
-                                <rect key="frame" x="-16" y="498" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="createProgram:" destination="F3R-w4-K03" eventType="touchUpInside" id="887-4x-jwA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -176,7 +168,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XZo-pm-Xj4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="x0v-kV-6sV"/>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="x0v-kV-6sV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="z4c-sw-8EI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Vm-Cu-9yz">
+                                <rect key="frame" x="160" y="149" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Program"/>
+                                <connections>
+                                    <action selector="createProgram:" destination="F3R-w4-K03" eventType="touchUpInside" id="887-4x-jwA"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="6Qp-jm-JaV" id="rlD-Dn-YbI"/>
                         <outlet property="programCollection" destination="15q-jS-qtR" id="Hjn-Xz-Esb"/>
