@@ -15,6 +15,14 @@ class ProgramsViewController: UIViewController {
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var programCollection: UICollectionView!
     
+    @IBAction func createProgram(_ sender: Any) {
+        //print("hai")
+        if let vc = UIStoryboard(name: "NewProgramViewController", bundle: nil).instantiateViewController(withIdentifier: "NewProgramViewController") as? NewProgramViewController
+        {
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    }
     // Data real from CloudKit
     var cetegoryColl: [Category] = []
     var selectedData: Int = 0

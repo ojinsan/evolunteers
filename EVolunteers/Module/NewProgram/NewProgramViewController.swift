@@ -8,12 +8,17 @@
 
 import UIKit
 import CloudKit
-
-
+import Combine
 
 
 class NewProgramViewController: UIViewController, UITextFieldDelegate{
     
+    let privateDatabase = CKContainer.default().privateCloudDatabase
+    let publicDatabase = CKContainer.default().publicCloudDatabase
+    let sharedDatabase = CKContainer.default().sharedCloudDatabase
+    
+    
+    var programs = [Programs]()
     var rekaman: CKRecord?
     var delegate:NewProgramViewControllerDelegate?
     var newList: Bool = true
@@ -41,7 +46,11 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
     @IBAction func openCameraAndLibrary(_ sender: UIButton) {
         openCameraAndLibrary()
     }
-
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
@@ -52,9 +61,9 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
         
         //scrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
         
-         //MARK: HIDE KEYBOARD WHEN TAPPING ON SCREEN
+        //MARK: HIDE KEYBOARD WHEN TAPPING ON SCREEN
         let tapOnScreen: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
+        
         tapOnScreen.cancelsTouchesInView = false
         view.addGestureRecognizer(tapOnScreen)
         
@@ -62,25 +71,25 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-          print("up up")
-              if (textField == deskripsi) {
-                  print("its desc")
-                  scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
-              } else if (textField == kebutuhan) {
-                  print("its desc")
-                  scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
-              } else if (textField == kriteria){
-                print("its desc")
-                scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
-              }
-                
-                else {
-                  scrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
-              }
+        print("up up")
+        if (textField == deskripsi) {
+            print("its desc")
+            scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
+        } else if (textField == kebutuhan) {
+            print("its desc")
+            scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
+        } else if (textField == kriteria){
+            print("its desc")
+            scrollView.setContentOffset(CGPoint(x: 0, y: 240), animated: true)
+        }
+            
+        else {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-         scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
+        scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -109,50 +118,91 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
         datePickerStart.datePickerMode = .date
         datePickerEnd.datePickerMode = .date
     }
-
+    
     
     
     @IBAction func submitBtn(_ sender: UIButton) {
-        let judulProgram = self.judulProgram.text! as NSString
-        let penyelenggara = self.penyelenggara.text! as NSString
-        let kategori:[NSString] = [self.Kategori.text! as NSString]
-        let lokasi = self.Lokasi.text! as NSString
-        let kebutuhan:[NSString] = [self.kebutuhan.text! as NSString]
-        let deskripsi = self.deskripsi.text! as NSString
-        let kriteria = self.kriteria.text! as NSString
-        //let programCreator = "B76C2ADB-083F-6C4F-8744-AFC4E570AAC7" as NSString
+        let judulProgram = self.judulProgram.text! as String
+        let penyelenggara = self.penyelenggara.text! as String
+        let kategori:[String] = [self.Kategori.text! as String]
+        let lokasi = self.Lokasi.text! as String
+        let kebutuhan:[String] = [self.kebutuhan.text! as String]
+        let deskripsi = self.deskripsi.text! as String
+        let kriteria = self.kriteria.text! as String
+        //let programCreator = "B76C2ADB-083F-6C4F-8744-AFC4E570AAC7" as RecordID
         
         let datePickerEnd = self.datePickerEnd.date as NSDate
         let datePickerStart = self.datePickerStart.date as NSDate
+        //
+        //
+        //        // Fetch Private Database
+        //        let privateDatabase = CKContainer.default().publicCloudDatabase
+        //
+        //        rekaman = CKRecord(recordType: "Programs")
+        //
+        //        // Configure Record
+        //        rekaman?.setObject(judulProgram, forKey: "namaProgram")
+        //        rekaman?.setObject(penyelenggara, forKey: "namaKomunitas")
+        //        rekaman?.setObject(kebutuhan as __CKRecordObjCValue, forKey: "kebutuhanPekerjaan")
+        //        rekaman?.setObject(kriteria, forKey: "kriteria")
+        //        rekaman?.setObject(kategori as __CKRecordObjCValue, forKey: "programCategory")
+        //        rekaman?.setObject(lokasi, forKey: "lokasi")
+        //        rekaman?.setObject(deskripsi, forKey: "deskripsi")
+        //        //rekaman?.setObject(programCreator, forKey: "programCreator")
+        //
+        //        rekaman?.setObject(datePickerStart, forKey: "startDate")
+        //        rekaman?.setObject(datePickerEnd, forKey: "endDate")
+        //
+        //
+        //
+        //
+        //        privateDatabase.save(rekaman!) { (record, error) -> Void in
+        //            DispatchQueue.main.sync {
+        //                // Process Response
+        //                self.processResponse(record: record, error: error)
+        //            }
+        //        }
         
+        //processResponse(record: <#T##CKRecord?#>, error: <#T##Error?#>)
         
-        // Fetch Private Database
-        let privateDatabase = CKContainer.default().publicCloudDatabase
-        
-        rekaman = CKRecord(recordType: "Programs")
-        
-        // Configure Record
-        rekaman?.setObject(judulProgram, forKey: "namaProgram")
-        rekaman?.setObject(penyelenggara, forKey: "namaKomunitas")
-        rekaman?.setObject(kebutuhan as __CKRecordObjCValue, forKey: "kebutuhanPekerjaan")
-        rekaman?.setObject(kriteria, forKey: "kriteria")
-        rekaman?.setObject(kategori as __CKRecordObjCValue, forKey: "programCategory")
-        rekaman?.setObject(lokasi, forKey: "lokasi")
-        rekaman?.setObject(deskripsi, forKey: "deskripsi")
-        //rekaman?.setObject(programCreator, forKey: "programCreator")
-        
-        rekaman?.setObject(datePickerStart, forKey: "startDate")
-        rekaman?.setObject(datePickerEnd, forKey: "endDate")
-        
-        
-        
-        
-        privateDatabase.save(rekaman!) { (record, error) -> Void in
-            DispatchQueue.main.sync {
-                // Process Response
-                self.processResponse(record: record, error: error)
-            }
+        let data = gambar.image!.pngData(); // UIImage -> NSData, see also UIImageJPEGRepresentation
+        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(NSUUID().uuidString+".dat")
+        do {
+            try data!.write(to: url!, options: [])
+        } catch let e as NSError {
+            print("Error! \(e)");
+            //return
         }
+        
+        
+        
+        Programs(judulProgram: judulProgram, penyelenggara:penyelenggara, kebutuhan:kebutuhan, kriteria:kriteria, kategori:kategori, lokasi:lokasi, deskripsi:deskripsi, startDate: datePickerStart, endDate:datePickerEnd, url:url!).save(result: { (users) in
+            print("users : \(users?.name ?? "")")
+            
+            DispatchQueue.main.sync {
+                self.dismiss(animated: true, completion: nil)
+                
+                // Delete the temporary file
+                do {
+                    try FileManager.default.removeItem(at: url!)
+                }
+                catch let e {
+                    print("Error deleting temp file: \(e)")
+                }
+
+                // ...
+            }
+            
+        }){
+            (error) in
+            print(error)
+            let message = "Error while submiting the Program"
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                
+            // Present Alert Controller
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
     
     
@@ -161,54 +211,43 @@ class NewProgramViewController: UIViewController, UITextFieldDelegate{
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         
-        
-        
         startDate.text = formatter.string(from: datePickerStart.date)
         endDate.text =  formatter.string(from: datePickerEnd.date)
         self.view.endEditing(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
-       private func processResponse(record: CKRecord?, error: Error?) {
-           var message = ""
-
-           if let error = error {
-               print(error)
-               message = "We were not able to save your list."
-
-           } else if record == nil {
-               message = "We were not able to save your list."
-           }
-
-           if !message.isEmpty {
-               // Initialize Alert Controller
-               let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-
-               // Present Alert Controller
-               present(alertController, animated: true, completion: nil)
-
-           } else {
-               // Notify Delegate
-               if newList {
-                   delegate?.controller(controller: self, didAddList: rekaman!)
-               } else {
-                   delegate?.controller(controller: self, didUpdateList: rekaman!)
-               }
-
-               // Pop View Controller
-               self.dismiss(animated: true, completion: nil)
-
-           }
-       }
+    
+    private func processResponse(record: CKRecord?, error: Error?) {
+        var message = ""
+        
+        if let error = error {
+            print(error)
+            message = "We were not able to save your list."
+            
+        } else if record == nil {
+            message = "We were not able to save your list."
+        }
+        
+        if !message.isEmpty {
+            // Initialize Alert Controller
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            
+            // Present Alert Controller
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            // Notify Delegate
+            if newList {
+                delegate?.controller(controller: self, didAddList: rekaman!)
+            } else {
+                delegate?.controller(controller: self, didUpdateList: rekaman!)
+            }
+            
+            // Pop View Controller
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
 }
 
 
@@ -244,17 +283,19 @@ extension NewProgramViewController: UIImagePickerControllerDelegate, UINavigatio
         
         self.present(actionAlert,animated: true, completion: nil)
     }
-        func imagePickerController(_ picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-            if let imageTaken = info[.originalImage] as? UIImage {
-                picker.dismiss(animated: true) {
-                    self.gambar.image = imageTaken
-                    //disini
-                    //self.convertImageToAnalysed(image:imageTaken)
-                }
+    func imagePickerController(_ picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let imageTaken = info[.originalImage] as? UIImage {
+            picker.dismiss(animated: true) {
+                self.gambar.image = imageTaken
+                //disini
+                //self.convertImageToAnalysed(image:imageTaken)
             }
         }
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+

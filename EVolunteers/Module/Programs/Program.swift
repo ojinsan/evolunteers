@@ -49,7 +49,7 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
     }
     
     //to icloud
-    init(name: String, judulProgram: String, penyelenggara:String, kebutuhan:[String],kriteria:String, kategori:[String],lokasi:String, deskripsi:String, startDate: NSDate, endDate:NSDate){
+    init(judulProgram: String, penyelenggara:String, kebutuhan:[String],kriteria:String, kategori:[String],lokasi:String, deskripsi:String, startDate: NSDate, endDate:NSDate,url:URL){
         self.judulProgram = judulProgram
         self.penyelenggara = penyelenggara
         self.kebutuhan = kebutuhan
@@ -67,7 +67,7 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
             record = CKRecord(recordType: Self.recordType)
         }
         
-    
+        record?["photo"] = CKAsset(fileURL: url)
         record?["judulProgram"] = judulProgram
         record?["penyelenggara"] = penyelenggara
         record?["kebutuhan"] = kebutuhan
