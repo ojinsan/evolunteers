@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Wz-CY-tZM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Wz-CY-tZM">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="cZa-tq-KKe" kind="relationship" relationship="viewControllers" id="zlP-l2-IKb"/>
@@ -32,7 +32,7 @@
         <scene sceneID="0Ua-bt-2LS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cZa-tq-KKe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Programs" image="staroflife" catalog="system" selectedImage="staroflife.fill" id="v3F-iY-lvV"/>
+                    <tabBarItem key="tabBarItem" title="Programs" image="house" catalog="system" selectedImage="house" id="v3F-iY-lvV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fY3-ou-Rin">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -51,7 +51,7 @@
         <scene sceneID="c2i-yW-mXp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vlg-TP-YE3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Activity" image="heart.circle" catalog="system" selectedImage="heart.circle.fill" id="qHS-BN-QlG"/>
+                    <tabBarItem key="tabBarItem" title="My Activity" image="arrow.right.arrow.left" catalog="system" selectedImage="arrow.right.arrow.left" id="qHS-BN-QlG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ita-1Q-Qvg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -70,7 +70,7 @@
         <scene sceneID="FJS-dt-Pdl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gar-4h-ctV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="wRm-Kd-qhU"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="wRm-Kd-qhU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mZ0-QZ-QnY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -117,11 +117,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart.circle" catalog="system" width="64" height="60"/>
-        <image name="heart.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="staroflife" catalog="system" width="62" height="64"/>
-        <image name="staroflife.fill" catalog="system" width="62" height="64"/>
+        <image name="arrow.right.arrow.left" catalog="system" width="119" height="128"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>

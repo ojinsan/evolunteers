@@ -1,41 +1,41 @@
 //
-//  User.swift
+//  UserActivitiesLog.swift
 //  EVolunteers
 //
-//  Created by Dedy Yuristiawan on 25/05/20.
+//  Created by Dedy Yuristiawan on 27/05/20.
 //  Copyright © 2020 Dedy Yuristiawan. All rights reserved.
 //
 
 import CloudKit
 
-class CK_User: CloudKitProtocol, Identifiable, Equatable {
+class UserActivitiesLog: CloudKitProtocol, Identifiable, Equatable {
     
     public var record: CKRecord?
     var id: CKRecord.ID?
-    var name: String?
+    var deskripsi: String?
     
-    static var RecordType = "CK_User"
+    static var RecordType = "UserActivitiesLog"
     
     public required init(ckRecord: CKRecord) {
-        self.name = ckRecord["name"]
+        self.deskripsi = ckRecord["deskripsi"]
         self.record = ckRecord
         self.id = ckRecord.recordID
     }
     
-    init(name: String){
-        self.name = name
+    init(deskripsi: String){
+        self.deskripsi = deskripsi
         
         if record == nil {
             record = CKRecord(recordType: Self.recordType)
         }
-        record?["name"] = name
+        record?["deskripsi"] = deskripsi
         
         if let record = self.record {
             self.id = record.recordID
         }
     }
     
-    static func == (lhs: CK_User, rhs: CK_User) -> Bool {
+    static func == (lhs: UserActivitiesLog, rhs: UserActivitiesLog) -> Bool {
         return lhs.id == rhs.id
     }
 
