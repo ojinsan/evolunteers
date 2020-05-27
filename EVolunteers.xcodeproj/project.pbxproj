@@ -42,7 +42,7 @@
 		5C926F53247D9611009AFD19 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F50247D9611009AFD19 /* CollectionViewCell.xib */; };
 		5C926F56247D9638009AFD19 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F54247D9638009AFD19 /* EditProfileVC.swift */; };
 		5C926F57247D9638009AFD19 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F55247D9638009AFD19 /* EditProfile.storyboard */; };
-		5C926F5B247E0539009AFD19 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F5A247E0539009AFD19 /* Users.swift */; };
+		5C926F5D247E0693009AFD19 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F5C247E0693009AFD19 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,7 @@
 		5C926F50247D9611009AFD19 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		5C926F54247D9638009AFD19 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		5C926F55247D9638009AFD19 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
-		5C926F5A247E0539009AFD19 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		5C926F5C247E0693009AFD19 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +258,7 @@
 		5C273B95246A3BEF00505C8D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				5C926F5A247E0539009AFD19 /* Users.swift */,
+				5C926F5C247E0693009AFD19 /* Users.swift */,
 				5C926F55247D9638009AFD19 /* EditProfile.storyboard */,
 				5C926F54247D9638009AFD19 /* EditProfileVC.swift */,
 				5C273BA0246A3C8900505C8D /* ProfileViewController.swift */,
@@ -501,7 +501,7 @@
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
 				42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */,
-				5C926F5B247E0539009AFD19 /* Users.swift in Sources */,
+				5C926F5D247E0693009AFD19 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
