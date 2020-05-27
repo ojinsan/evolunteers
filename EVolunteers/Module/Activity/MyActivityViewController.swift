@@ -49,6 +49,12 @@ class MyActivityViewController: UIViewController {
         UserActivitiesLog(deskripsi: "Memberikan APD sejumlah 29 juta kepada 3.700 rumah sakit di Papua, Sumatera, dan Nusa Tenggara").save(result: { (users) in
             self.reload()
         }) { (error) in print(error) }
+        
+        Members(namaLengkap: "", pendidikan: "", jabatan: "", email: "test@test.com", alamat: "").save(result: { (result) in
+            print("")
+        }) { (error) in
+            print("")
+        }
     }
     
     func setupView() {

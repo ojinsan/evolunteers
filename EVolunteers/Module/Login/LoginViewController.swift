@@ -100,24 +100,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", "\(email)"])
                 Members.query(predicate: predicate, result: { (users) in
                     if let users = users, users.count == 0 {
-                        Members(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
-                            self.dismiss(animated: true, completion: nil)
-                        }) { (error) in
-                            self.showViewBottom()
-                            print(error)
-                        }
+                        self.saveNewMembers(fullName: fullName?.givenName ?? "", email: email)
                     } else {
-                        self.dismiss(animated: true, completion: nil)
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }) { (error) in
                     self.showViewBottom()
                     print(error)
                 }
             }
-            
-//            self.delay(2) {
-//                self.dismiss(animated: true, completion: nil)
-//            }
             
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
@@ -129,6 +122,16 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             self.dismiss(animated: true, completion: nil)
         default:
             break
+        }
+    }
+    
+    func saveNewMembers(fullName: String, email: String) {
+        Members(namaLengkap: "\(fullName)", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }) { (error) in
+            self.showViewBottom()
         }
     }
     
