@@ -36,12 +36,16 @@ class ProfileViewController: UIViewController {
     }
     
     func usersView(){
-        userNama.text = "Derry Antonio"
-        userStatus.text = "Students"
-        userLokasi.text = "Jakarta"
-        userEmail.text = "derryantonio01@gmail.com"
-        userPhone.text = "08988913800"
-        userTTL.text = "Jakarta, 13 Juni 1992"
+        
+        let email = PreferenceManager.instance.userEmail
+        let nama = PreferenceManager.instance.userName
+        
+        
+        userNama.text = nama
+        userLokasi.text = ""
+        userEmail.text = email
+        userPhone.text = ""
+        userTTL.text = ""
     }
 }
 

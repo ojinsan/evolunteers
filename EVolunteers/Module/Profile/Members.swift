@@ -8,7 +8,7 @@
 
 import CloudKit
 
-class Users: CloudKitProtocol, Identifiable, Equatable {
+class Members: CloudKitProtocol, Identifiable, Equatable {
     
     public var record: CKRecord?
     var id: CKRecord.ID?
@@ -18,7 +18,7 @@ class Users: CloudKitProtocol, Identifiable, Equatable {
     var email: String?
     var alamat: String?
     
-    static var RecordType = "Users"
+    static var RecordType = "Members"
     
     public required init(ckRecord: CKRecord) {
         self.namaLengkap = ckRecord["namaLengkap"]
@@ -52,7 +52,7 @@ class Users: CloudKitProtocol, Identifiable, Equatable {
         }
     }
     
-    static func == (lhs: Users, rhs: Users) -> Bool {
+    static func == (lhs: Members, rhs: Members) -> Bool {
         return lhs.id == rhs.id
     }
 

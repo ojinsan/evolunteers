@@ -98,9 +98,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             self.delay(0.5) {
                 let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", "\(email)"])
-                Users.query(predicate: predicate, result: { (users) in
+                Members.query(predicate: predicate, result: { (users) in
                     if let users = users, users.count == 0 {
-                        Users(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
+                        Members(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
                             self.dismiss(animated: true, completion: nil)
                         }) { (error) in
                             self.showViewBottom()

@@ -12,8 +12,8 @@ import CloudKit
 class EditProfileVC: UIViewController, UITextFieldDelegate {
     
     var usersRecord: CKRecord?
-//    var delegate:EditProfileVCDelegate?
-//    var newData: Bool = true
+    
+    let privateDatabase = CKContainer.default().publicCloudDatabase
     
     
     @IBOutlet weak var editNama: UITextField!
@@ -24,10 +24,14 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var saveChanges: UIButton!
     
-//    var tempNama: String = ""
-//    var tempJabatan: String = ""
-//    var tempTempatLahir: String = ""
-//    var tempNoHandphone: String = ""
+    //    var tempNama: String = ""
+    //    var tempJabatan: String = ""
+    //    var tempTempatLahir: String = ""
+    //    var tempNoHandphone: String = ""
+    
+    var email = PreferenceManager.instance.userEmail
+    var nama = PreferenceManager.instance.userName
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +42,13 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
         
         //MARK: HIDE KEYBOARD WHEN TAPPING ON SCREEN
         let tapOnScreen: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
+        
         tapOnScreen.cancelsTouchesInView = false
         view.addGestureRecognizer(tapOnScreen)
+        
+        editNama.text = nama
+        editTempatLahir.text = email
+        
     }
     
     @objc func dismissKeyboard() {
@@ -48,61 +56,65 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitChanges(_ sender: UIButton) {
-        let editNama = self.editNama.text! as NSString
-        let editJabatan = self.editJabatan.text! as NSString
-        let editTempatLahir = self.editTempatLahir.text! as NSString
-        let editHandphone = self.editHandphone.text! as NSString
         
-        let privateDatabase = CKContainer.default().publicCloudDatabase
+        usersRecord = CKRecord(recordType: "Members")
         
-        usersRecord = CKRecord(recordType: "Users")
+        let predicate = NSPredicate(format: "email == %@", email!)
+        Members.query(predicate: predicate, result: { (users) in
+            if let users = users {
+//                self.users = users
+                print(users.count)
+            }
+        }) { (error) in
+            print(error)
+        }
         
-        //Record
-        usersRecord?.setObject(editNama, forKey: "namaLengkap")
-        usersRecord?.setObject(editJabatan, forKey: "jabatan")
-        usersRecord?.setObject(editTempatLahir, forKey: "tempatLahir")
-        usersRecord?.setObject(editHandphone, forKey: "handphone")
+        //        let predicate = NSPredicate(value: true)
+        //
+        //        usersRecord = CKRecord(recordType: "Members")
+        //
+        //        let query = CKQuery(recordType: "Members", predicate: predicate)
+        //        query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
+        //
+        //        let operation = CKQueryOperation(query: query)
+        //
+        ////        titles.removeAll()
+        ////        recordIDs.removeAll()
+        //
+        //        operation.recordFetchedBlock = { record in
+        //
+        ////            titles.append(record["title"]!)
+        ////            recordIDs.append(record.recordID)
+        //
+        //        }
+        //
+        //        operation.queryCompletionBlock = { cursor, error in
+        //
+        //            DispatchQueue.main.async {
+        //
+        //                let name = record.value(forKeyPath: "Name") as! String
+        ////                print("Titles: \(titles)")
+        ////                print("RecordIDs: \(recordIDs)")
+        //
+        //            }
+        //
+        //        }
         
-//        tempNama = self.editNama.text! as String
-//        tempJabatan = self.editJabatan.text! as String
-//        tempTempatLahir = self.editTempatLahir.text! as String
-//        tempNoHandphone = self.editHandphone.text! as String
+//        privateDatabase.add(operation)
+        
+        
+//        let editNama = self.editNama.text! as NSString
+//        let editJabatan = self.editJabatan.text! as NSString
+//        let editTempatLahir = self.editTempatLahir.text! as NSString
+//        let editHandphone = self.editHandphone.text! as NSString
+//
+//        usersRecord = CKRecord(recordType: "Members")
+//
+//        //Record
+//        usersRecord?.setObject(editNama, forKey: "namaLengkap")
+//        usersRecord?.setObject(editJabatan, forKey: "jabatan")
+//        usersRecord?.setObject(editTempatLahir, forKey: "tempatLahir")
+//        usersRecord?.setObject(editHandphone, forKey: "handphone")
+        
     }
-    
-//    private func processResponse(record: CKRecord?, error: Error?) {
-//        var message = ""
-//
-//        if let error = error {
-//            print(error)
-//            message = "We were not able to update your data."
-//
-//        } else if record == nil {
-//            message = "We were not able to update your data."
-//        }
-//
-//        if !message.isEmpty {
-//            // Initialize Alert Controller
-//            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-//
-//            // Present Alert Controller
-//            present(alertController, animated: true, completion: nil)
-//
-//        } else {
-//            // Notify Delegate
-//            if newData {
-//                delegate?.controller(controller: self, didAddList: usersRecord!)
-//            } else {
-//                delegate?.controller(controller: self, didUpdateList: usersRecord!)
-//            }
-//
-//            // Pop View Controller
-//            self.dismiss(animated: true, completion: nil)
-//
-//        }
-//    }
 }
-
-//protocol EditProfileVCDelegate {
-//    func controller(controller: EditProfileVC, didAddList usersRecord: CKRecord)
-//    func controller(controller: EditProfileVC, didUpdateList usersRecord: CKRecord)
-//}
