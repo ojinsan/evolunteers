@@ -89,24 +89,33 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             let _ = appleIDCredential.user
             let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
+            let email = appleIDCredential.email ?? ""
             
             // save preference
             PreferenceManager.instance.isUserLogin = true
             PreferenceManager.instance.userEmail = email
             PreferenceManager.instance.userName = "\(fullName?.givenName ?? "")"
             
-//            self.delay(0.5) {
-//                CK_User(name: "deydey").save(result: { (users) in
-//                    self.dismiss(animated: true, completion: nil)
-//                }) { (error) in
-//
-//                }
-//            }
-            
-            self.delay(2) {
-                self.dismiss(animated: true, completion: nil)
+            self.delay(0.5) {
+                let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", "\(email)"])
+                Users.query(predicate: predicate, result: { (users) in
+                    if let users = users, users.count == 0 {
+                        Users(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
+                            self.dismiss(animated: true, completion: nil)
+                        }) { (error) in
+                            print(error)
+                        }
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }) { (error) in
+                    print(error)
+                }
             }
+            
+//            self.delay(2) {
+//                self.dismiss(animated: true, completion: nil)
+//            }
             
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
@@ -144,7 +153,7 @@ extension LoginViewController {
 //
 //    }
     
-    /// syntact to get name user
+    /// syntact to call name user and email
 //    PreferenceManager.instance.userName
 //    PreferenceManager.instance.userEmail
     

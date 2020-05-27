@@ -101,7 +101,17 @@ extension MyActivityViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.toLogin()
+    }
+    
+    func toLogin() {
+        if PreferenceManager.instance.isUserLogin {
+            return
+        }
         
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(vc, animated: true)
     }
 }
 
