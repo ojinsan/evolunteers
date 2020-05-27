@@ -31,7 +31,6 @@
 		5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273BA0246A3C8900505C8D /* ProfileViewController.swift */; };
 		5C273BA3246A3C9300505C8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C273BA2246A3C9300505C8D /* Profile.storyboard */; };
 		5C926F23247BA5E3009AFD19 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C926F22247BA5E2009AFD19 /* CloudKit.framework */; };
-		5C926F30247BEBC0009AFD19 /* CK_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F2F247BEBC0009AFD19 /* CK_User.swift */; };
 		5C926F33247BEC90009AFD19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F32247BEC90009AFD19 /* LoginViewController.swift */; };
 		5C926F35247BEF35009AFD19 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F34247BEF35009AFD19 /* Login.storyboard */; };
 		5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */; };
@@ -43,6 +42,7 @@
 		5C926F53247D9611009AFD19 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F50247D9611009AFD19 /* CollectionViewCell.xib */; };
 		5C926F56247D9638009AFD19 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F54247D9638009AFD19 /* EditProfileVC.swift */; };
 		5C926F57247D9638009AFD19 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F55247D9638009AFD19 /* EditProfile.storyboard */; };
+		5C926F5B247E0539009AFD19 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F5A247E0539009AFD19 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,6 @@
 		5C273BA0246A3C8900505C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C273BA2246A3C9300505C8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5C926F22247BA5E2009AFD19 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		5C926F2F247BEBC0009AFD19 /* CK_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK_User.swift; sourceTree = "<group>"; };
 		5C926F32247BEC90009AFD19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5C926F34247BEF35009AFD19 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5C926F37247BFD8F009AFD19 /* CloudKitProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitProtocol.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		5C926F50247D9611009AFD19 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		5C926F54247D9638009AFD19 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		5C926F55247D9638009AFD19 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		5C926F5A247E0539009AFD19 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,11 +258,11 @@
 		5C273B95246A3BEF00505C8D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5C926F5A247E0539009AFD19 /* Users.swift */,
 				5C926F55247D9638009AFD19 /* EditProfile.storyboard */,
 				5C926F54247D9638009AFD19 /* EditProfileVC.swift */,
 				5C273BA0246A3C8900505C8D /* ProfileViewController.swift */,
 				5C273BA2246A3C9300505C8D /* Profile.storyboard */,
-				5C926F2F247BEBC0009AFD19 /* CK_User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -491,7 +491,6 @@
 				5C273B8B246A38E700505C8D /* PreferenceManager.swift in Sources */,
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
 				5C926F52247D9611009AFD19 /* CollectionViewCell.swift in Sources */,
-				5C926F30247BEBC0009AFD19 /* CK_User.swift in Sources */,
 				5C273B94246A3BDD00505C8D /* MainTabBarController.swift in Sources */,
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
 				5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */,
@@ -502,6 +501,7 @@
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
 				42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */,
+				5C926F5B247E0539009AFD19 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
