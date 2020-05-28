@@ -24,6 +24,8 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
     var deskripsi: String?
     var startDate: NSDate?
     var endDate:NSDate?
+    var registeredVolunteers : [CKRecord.Reference]?
+    var photo : CKAsset?
     
     static var RecordType = "Programs"
     
@@ -39,6 +41,8 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
         self.kategori = ckRecord["programCategory"] as? [String]
         self.lokasi = ckRecord["lokasi"]
         self.deskripsi = ckRecord["deskripsi"]
+        self.photo = ckRecord["photo"]
+        self.registeredVolunteers = ckRecord["registeredVolunteers"] as? [CKRecord.Reference]
         //rekaman?.setObject(programCreator, forKey: "programCreator")
         
         self.startDate = ckRecord["startDate"] as? NSDate
@@ -60,7 +64,8 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
         //rekaman?.setObject(programCreator, forKey: "programCreator")
         self.startDate = startDate
         self.endDate = endDate
-        
+        self.photo = CKAsset(fileURL: url)
+        self.registeredVolunteers = [CKRecord.Reference]()
         
         
         if record == nil {
@@ -78,7 +83,7 @@ class Programs: CloudKitProtocol, Identifiable, Equatable {
         //rekaman?.setObject(programCreator, forKey: "programCreator")
         record?["startDate"] = startDate
         record?["endDate"] = endDate
-        
+        record?["registeredVolunteers"] = [CKRecord.Reference]()
         
         
         if let record = self.record {

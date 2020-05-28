@@ -36,6 +36,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="yxL-W2-WkV">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -47,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="5u5-wO-5OQ"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="yxL-W2-WkV" id="Y0d-lV-p9n"/>
                         <outlet property="collectionView" destination="Qwd-ty-6By" id="HCL-nt-HPU"/>
                     </connections>
                 </viewController>

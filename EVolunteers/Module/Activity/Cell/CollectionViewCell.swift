@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class CollectionViewCell: UICollectionViewCell {
 
@@ -28,8 +29,28 @@ class CollectionViewCell: UICollectionViewCell {
     
     var userActivitiesLog : UserActivitiesLog?{
         didSet{
-            self.dateLabel.text = userActivitiesLog?.record?.creationDate?.description
+            
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "MMM dd, yyyy"
+            
+            self.dateLabel.text = dateFormatterPrint.string(from: userActivitiesLog?.record?.creationDate ?? Date())
             self.descLabel.text = userActivitiesLog?.deskripsi
+            
+            if let activitiesProgramId = userActivitiesLog?.programId {
+                let predicatePrograms = NSPredicate(format: "recordID = %@", activitiesProgramId)
+                Programs.query(predicate: predicatePrograms, result: { (foundPrograms) in
+                    if let foundProgram = foundPrograms?.first {
+                        if let asset = foundProgram.photo, let fileUrl = asset.fileURL, let data = try? Data(contentsOf: fileUrl), let image = UIImage(data: data) {
+                            
+                            DispatchQueue.main.async {
+                                self.imageView.image = image
+                            }
+                        }
+                    }
+                }) { (error) in
+                    print(error)
+                }
+            }
         }
     }
     
