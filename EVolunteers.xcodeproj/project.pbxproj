@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E2E1FED247DEAA900F544CC /* NewProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E1FEA247DEAA900F544CC /* NewProgramViewController.swift */; };
 		1E2E1FEE247DEAA900F544CC /* NewProgramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E1FEB247DEAA900F544CC /* NewProgramViewController.storyboard */; };
+		42527897247E686F00308E68 /* ProgramsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42527896247E686F00308E68 /* ProgramsDetails.swift */; };
 		42B81528247CD565001E6A2F /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81527247CD565001E6A2F /* Program.swift */; };
 		42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */; };
 		5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B49246A35F600505C8D /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1E2E1FEA247DEAA900F544CC /* NewProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProgramViewController.swift; sourceTree = "<group>"; };
 		1E2E1FEB247DEAA900F544CC /* NewProgramViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewProgramViewController.storyboard; sourceTree = "<group>"; };
+		42527896247E686F00308E68 /* ProgramsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsDetails.swift; sourceTree = "<group>"; };
 		42B81527247CD565001E6A2F /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewCell.swift; sourceTree = "<group>"; };
 		5C273B46246A35F600505C8D /* EVolunteers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVolunteers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +277,7 @@
 				5C273B9C246A3C6000505C8D /* Programs.storyboard */,
 				5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */,
 				42B81527247CD565001E6A2F /* Program.swift */,
+				42527896247E686F00308E68 /* ProgramsDetails.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */,
+				42527897247E686F00308E68 /* ProgramsDetails.swift in Sources */,
 				5C273B8A246A38E700505C8D /* UIViewController+Extension.swift in Sources */,
 				5C273B86246A38E700505C8D /* CoreData.xcdatamodeld in Sources */,
 				5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */,

@@ -18,7 +18,7 @@ class ProgramsViewCell: UICollectionViewCell {
     
     var programsCollection: Programs! {
         didSet {
-            imageVolunteers.image = UIImage(named: "Rectangle")
+            imageVolunteers.image = programsCollection.image
             activityName.text = programsCollection.judulProgram
             communityName.text = programsCollection.penyelenggara
             starToWork.text = "Minggu"
