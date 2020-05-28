@@ -111,7 +111,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     print(error)
                 }
             }
-            
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
             let password = passwordCredential.password
@@ -169,4 +168,59 @@ extension LoginViewController {
 //        self.present(vc, animated: true)
 //    }
     
+//    func save(){
+//        CK_User(name: "deydey").save(result: { (users) in
+//            print("users : \(users?.name ?? "")")
+//        }) { (error) in
+//
+//        }
+//    }
+//
+//    func get(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa"])
+//        CK_User.query(predicate: predicate, result: { (users) in
+//            if let users = users {
+//                self.users = users
+//                print(users.count)
+//            }
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
+//    func getAll(){
+//        let sortCreation = NSSortDescriptor(key: "creationDate", ascending: false)
+//        CK_User.all(inDatabase: CKContainer.default().publicCloudDatabase, withSortDescriptors : [sortCreation], result: { (users) in
+//            if let users = users {
+//                self.users = users
+//                print(users.count)
+//            }
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
+//    func update(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa"])
+//        CK_User(name: "fofo").update(predicate: predicate, result: { (users) in
+//            if let users = users {
+//
+//            }
+//        }) { (error) in
+//            print("error update")
+//        }
+//    }
+//
+//    func delete(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa2"])
+//        CK_User.delete(predicate: predicate) {
+//            print("deleted record")
+//        }
+//    }
+//
+//    func deleteAll(){
+//        CK_User.deleteAll {
+//            print("deleted all records")
+//        }
+//    }
 }
