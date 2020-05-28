@@ -10,11 +10,8 @@ import UIKit
 import CloudKit
 
 class EditProfileVC: UIViewController, UITextFieldDelegate {
-    
-    var usersRecord: CKRecord?
-    
-    let privateDatabase = CKContainer.default().publicCloudDatabase
-    
+
+    let publicDatabase = CKContainer.default().publicCloudDatabase
     
     @IBOutlet weak var editNama: UITextField!
     @IBOutlet weak var editMobilePhone: UITextField!
@@ -24,8 +21,8 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var saveChanges: UIButton!
     
-    var email = PreferenceManager.instance.userEmail
-    var nama = PreferenceManager.instance.userName
+    let email = PreferenceManager.instance.userEmail
+    let nama = PreferenceManager.instance.userName
     
     
     override func viewDidLoad() {
@@ -43,6 +40,7 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
         
         editNama.text = nama
         
+        get()
     }
     
     @objc func dismissKeyboard() {
@@ -50,20 +48,6 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitChanges(_ sender: UIButton) {
-        
-        usersRecord = CKRecord(recordType: "Members")
-        
-        let predicate = NSPredicate(format: "email == %@", email!)
-        Members.query(predicate: predicate, result: { (users) in
-            if let users = users {
-//                self.users = users
-                print(users)
-                print(users.count)
-            }
-        }) { (error) in
-            print(error)
-        }
-        
         let editNama = self.editNama.text! as String
         let editJabatan = self.editJabatan.text! as String
         let editMobilePhone = self.editMobilePhone.text! as String
@@ -93,5 +77,45 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
         }) { (error) in
             print(error)
         }
+    }
+    
+    func get() {
+        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
+        let query = CKQuery(recordType: "Members", predicate: predicate)
+        
+        publicDatabase.perform(query, inZoneWith: nil, completionHandler: ({results, error in
+            if (error != nil) {
+                DispatchQueue.main.async {
+                    print("Cloud Error")
+                }
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for entry in results! {
+                            
+                            let alamat = entry["alamat"] as? String
+                            if alamat != nil {
+                                self.editAlamat.text = alamat
+                            }
+                            
+                            let jabatan = entry["jabatan"] as? String
+                            if jabatan != nil {
+                                self.editJabatan.text = jabatan
+                            }
+                            
+                            let pendidikan = entry["pendidikan"] as? String
+                            if pendidikan != nil {
+                                self.editPendidikan.text = pendidikan
+                            }
+                            
+                            let phone = entry["mobilePhone"] as? String
+                            if phone != nil {
+                                self.editMobilePhone.text = phone
+                            }
+                        }
+                    }
+                }
+            }
+        }))
     }
 }

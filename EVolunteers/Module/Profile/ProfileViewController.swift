@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import CloudKit
 
 class ProfileViewController: UIViewController {
+    
+    let publicDatabase = CKContainer.default().publicCloudDatabase
     
     @IBOutlet weak var daftarButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var userNama: UILabel!
-    @IBOutlet weak var userStatus: UILabel!
     @IBOutlet weak var userLokasi: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userPhone: UILabel!
-    @IBOutlet weak var userTTL: UILabel!
+    @IBOutlet weak var userPendidikan: UILabel!
     @IBOutlet weak var userJabatan: UILabel!
     
     @IBOutlet weak var userPrograms: UILabel!
@@ -36,33 +38,53 @@ class ProfileViewController: UIViewController {
         profileImage.layer.borderWidth = 1
         profileImage.layer.borderColor = UIColor.init(hex: 0x000000).cgColor
         
-        usersView()
+        userEmail.text = email
+        
         get()
         
     }
     
-    func usersView(){
-        
-        userNama.text = nama
-        userLokasi.text = ""
-        userEmail.text = email
-        userPhone.text = ""
-        userTTL.text = ""
-        userJabatan.text = ""
-    }
-    
     func get() {
         let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
-        Members.query(predicate: predicate, result: { (foundMembers) in
-            if let foundMember = foundMembers?.first {
-                let alamat = foundMember.record?.value(forKey: "alamat")
-                let phone = foundMember.record?.value(forKey: "mobilePhone")
+        let query = CKQuery(recordType: "Members", predicate: predicate)
+        
+        publicDatabase.perform(query, inZoneWith: nil, completionHandler: ({results, error in
+            if (error != nil) {
+                DispatchQueue.main.async {
+                    print("Cloud Error")
+                }
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for entry in results! {
+                            let namaLengkap = entry["namaLengkap"] as? String
+                            self.userNama.text = namaLengkap!
+                            
+                            let alamat = entry["alamat"] as? String
+                            if alamat != nil {
+                                self.userLokasi.text = alamat
+                            }
+                            
+                            let jabatan = entry["jabatan"] as? String
+                            if jabatan != nil {
+                                self.userJabatan.text = jabatan
+                            }
+                            
+                            let pendidikan = entry["pendidikan"] as? String
+                            if pendidikan != nil {
+                                self.userPendidikan.text = pendidikan
+                            }
+                            
+                            let phone = entry["mobilePhone"] as? String
+                            if phone != nil {
+                                self.userPhone.text = phone
+                            }
+                        }
+                    }
+                }
             }
-        }) { (error) in
-            print(error)
-        }
+        }))
     }
-    
 }
 
 extension UIColor {
