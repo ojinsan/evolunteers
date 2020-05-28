@@ -21,8 +21,15 @@ class ProgramsDetails: UIViewController {
     @IBOutlet weak var volunteryJobs: UILabel!
     @IBOutlet weak var neededCollection: UICollectionView!
     
-    var data: Programs! {
-        didSet {
+    var data: Programs?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupView()
+    }
+    
+    func setupView() {
+        if let data = data {
             communityName.text = data.judulProgram
             imageCover.image = data.image
             profileImage.image = data.image
@@ -33,9 +40,5 @@ class ProgramsDetails: UIViewController {
             volunteryJobs.text = data.deskripsi
             volunteryJoined.text = data.kriteria
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }

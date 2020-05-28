@@ -161,9 +161,17 @@ extension ProgramsViewController: UICollectionViewDataSource, UICollectionViewDe
                 selectedData = indexPath.row
             }
         } else {
-            selectedRow = indexPath.row
-
-            self.performSegue(withIdentifier: "toDetails", sender: self)
+//            selectedRow = indexPath.row
+//
+//            self.performSegue(withIdentifier: "toDetails", sender: self)
+            
+            let data = isFiltering ? programsFiltered[indexPath.row] : dataPrograms[indexPath.row]
+            let storyboard = UIStoryboard(name: "Programs", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ProgramsDetails") as! ProgramsDetails
+            vc.data = data
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    
 }
