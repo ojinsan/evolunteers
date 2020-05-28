@@ -56,7 +56,7 @@ class ProgramsViewController: UIViewController {
         getAllPrograms()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         getAllPrograms()
     }
     
@@ -161,9 +161,6 @@ extension ProgramsViewController: UICollectionViewDataSource, UICollectionViewDe
                 selectedData = indexPath.row
             }
         } else {
-//            selectedRow = indexPath.row
-//
-//            self.performSegue(withIdentifier: "toDetails", sender: self)
             
             let data = isFiltering ? programsFiltered[indexPath.row] : dataPrograms[indexPath.row]
             let storyboard = UIStoryboard(name: "Programs", bundle: nil)
