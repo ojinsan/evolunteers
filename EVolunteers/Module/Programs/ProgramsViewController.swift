@@ -16,13 +16,14 @@ class ProgramsViewController: UIViewController {
     @IBOutlet weak var programCollection: UICollectionView!
     
     @IBAction func createProgram(_ sender: Any) {
-        //print("hai")
         if let vc = UIStoryboard(name: "NewProgramViewController", bundle: nil).instantiateViewController(withIdentifier: "NewProgramViewController") as? NewProgramViewController
         {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }
     }
+    
+    var selectedRow: Int = 0
     // Data real from CloudKit
     var cetegoryColl: [Category] = []
     var selectedData: Int = 0
@@ -55,10 +56,21 @@ class ProgramsViewController: UIViewController {
         getAllPrograms()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        getAllPrograms()
+    }
+    
     func getUpdateDate() {
         categoryCollection.performBatchUpdates({
             categoryCollection.reloadSections(NSIndexSet(index: 0) as IndexSet)
         }, completion: { (finished:Bool) -> Void in })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails" {
+            let destination = segue.destination as? ProgramsDetails
+            destination?.data = dataPrograms[selectedRow]
+        }
     }
     
     func getAllPrograms() {
@@ -131,9 +143,9 @@ extension ProgramsViewController: UICollectionViewDataSource, UICollectionViewDe
             
         } else {
             let cellPrograms = collectionView.dequeueReusableCell(withReuseIdentifier: "Programs", for: indexPath) as! ProgramsViewCell
-            
+                
             let data = isFiltering ? programsFiltered[indexPath.row] : dataPrograms[indexPath.row]
-            
+        
             cellPrograms.programsCollection = data
             
             return cellPrograms
@@ -149,7 +161,9 @@ extension ProgramsViewController: UICollectionViewDataSource, UICollectionViewDe
                 selectedData = indexPath.row
             }
         } else {
-            
+            selectedRow = indexPath.row
+
+            self.performSegue(withIdentifier: "toDetails", sender: self)
         }
     }
 }

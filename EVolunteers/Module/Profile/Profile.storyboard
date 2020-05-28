@@ -270,6 +270,7 @@
                         <outlet property="daftarButton" destination="3HL-Dy-NEa" id="n92-lg-mXU"/>
                         <outlet property="profileImage" destination="PzJ-50-ykT" id="1HB-dS-d4e"/>
                         <outlet property="userEmail" destination="E6x-Gj-gX9" id="sfc-du-ivI"/>
+                        <outlet property="userJabatan" destination="Ga2-uq-Dcg" id="b79-VC-KGi"/>
                         <outlet property="userLokasi" destination="JDy-nY-yta" id="5sE-Qd-WEd"/>
                         <outlet property="userNama" destination="nxd-9O-jyw" id="1GP-HD-Sm5"/>
                         <outlet property="userPhone" destination="J2r-zS-aeL" id="ChT-kA-kr3"/>

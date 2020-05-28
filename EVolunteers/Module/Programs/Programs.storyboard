@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,8 @@
                                 <rect key="frame" x="20" y="106" width="374" height="55"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="XmX-ja-flt"/>
+                                    <constraint firstAttribute="height" constant="55" id="X7J-9h-rMu"/>
+                                    <constraint firstAttribute="width" constant="374" id="yzM-AJ-8Ih"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="12" minimumInteritemSpacing="12" id="cCy-ta-fVb">
                                     <size key="itemSize" width="100" height="55"/>
@@ -37,34 +38,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQh-iI-GPm">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CQh-iI-GPm">
                                                     <rect key="frame" x="10" y="8" width="35" height="4"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="YB9-hr-dOu"/>
-                                                        <constraint firstAttribute="height" constant="4" id="td3-TT-kh8"/>
-                                                    </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKw-wJ-muf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKw-wJ-muf">
                                                     <rect key="frame" x="8" y="14" width="84" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="Irv-KI-TDz"/>
-                                                        <constraint firstAttribute="width" constant="84" id="p56-6q-dpl"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.37254901960784315" green="0.65490196078431373" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstItem="CQh-iI-GPm" firstAttribute="leading" secondItem="sC3-27-wal" secondAttribute="leading" constant="10" id="PoB-N8-D6N"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZKw-wJ-muf" secondAttribute="trailing" constant="8" id="Ybr-hW-ZJu"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZKw-wJ-muf" secondAttribute="bottom" constant="14" id="ZHo-J1-G9d"/>
-                                                <constraint firstAttribute="trailing" secondItem="CQh-iI-GPm" secondAttribute="trailing" constant="55" id="dpy-Em-mgf"/>
-                                                <constraint firstItem="ZKw-wJ-muf" firstAttribute="top" secondItem="CQh-iI-GPm" secondAttribute="bottom" constant="2" id="iX7-bT-EL0"/>
-                                                <constraint firstItem="ZKw-wJ-muf" firstAttribute="leading" secondItem="sC3-27-wal" secondAttribute="leading" constant="8" id="pXJ-oD-XL7"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="55"/>
                                         <connections>
@@ -79,9 +66,8 @@
                                 <rect key="frame" x="20" y="169" width="374" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="GXn-2h-CYS"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="587" id="dWE-5d-Jji"/>
-                                    <constraint firstAttribute="height" constant="672" id="ha1-al-YBM"/>
+                                    <constraint firstAttribute="height" constant="672" id="Gky-CD-4FP"/>
+                                    <constraint firstAttribute="width" constant="374" id="nhf-ro-rHe"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JBb-Vp-at9">
                                     <size key="itemSize" width="165" height="241"/>
@@ -105,7 +91,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LSd-oi-H5Q">
                                                     <rect key="frame" x="4" y="194" width="16" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minggu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0j-wb-xMX">
                                                     <rect key="frame" x="28" y="195" width="39" height="14"/>
@@ -117,7 +103,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-Fa-znV">
                                                     <rect key="frame" x="4" y="216.5" width="16" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jakarta Timur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czj-jL-MG0">
                                                     <rect key="frame" x="28" y="218" width="71" height="14"/>
@@ -126,17 +112,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Relawan HIV/Aids" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-kv-BB8">
-                                                    <rect key="frame" x="8" y="115" width="149" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Himpunan Relawan Indonesia" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-dm-ixY">
                                                     <rect key="frame" x="8" y="146" width="149" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Relawan HIV/Aids" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-kv-BB8">
+                                                    <rect key="frame" x="8" y="112" width="149" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -150,7 +136,7 @@
                                             <outlet property="imageVolunteers" destination="TSL-BR-xc7" id="Hdn-Ku-wor"/>
                                             <outlet property="placement" destination="Czj-jL-MG0" id="U9o-tq-G8c"/>
                                             <outlet property="starToWork" destination="V0j-wb-xMX" id="F3t-iw-m4S"/>
-                                            <segue destination="Seu-Tl-ABb" kind="show" id="bqW-m8-kWX"/>
+                                            <segue destination="Seu-Tl-ABb" kind="show" identifier="toDetails" id="bqW-m8-kWX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -158,20 +144,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Qp-jm-JaV" firstAttribute="top" secondItem="XZo-pm-Xj4" secondAttribute="top" constant="18" id="7To-jO-Jxc"/>
-                            <constraint firstItem="15q-jS-qtR" firstAttribute="leading" secondItem="XZo-pm-Xj4" secondAttribute="leading" constant="20" id="98C-gd-B4B"/>
-                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="trailing" secondItem="15q-jS-qtR" secondAttribute="trailing" constant="20" id="G6C-Tn-Z1r"/>
-                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="bottom" secondItem="15q-jS-qtR" secondAttribute="bottom" constant="21" id="Iob-EZ-OyW"/>
-                            <constraint firstItem="15q-jS-qtR" firstAttribute="top" secondItem="6Qp-jm-JaV" secondAttribute="bottom" constant="8" id="cGo-J8-JbA"/>
-                            <constraint firstItem="6Qp-jm-JaV" firstAttribute="leading" secondItem="XZo-pm-Xj4" secondAttribute="leading" constant="20" id="i9u-LQ-bw1"/>
-                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="trailing" secondItem="6Qp-jm-JaV" secondAttribute="trailing" constant="20" id="lCc-RW-phJ"/>
+                            <constraint firstItem="15q-jS-qtR" firstAttribute="top" secondItem="6Qp-jm-JaV" secondAttribute="bottom" constant="8" id="08m-4M-vPX"/>
+                            <constraint firstItem="6Qp-jm-JaV" firstAttribute="top" secondItem="XZo-pm-Xj4" secondAttribute="top" constant="18" id="AYB-7l-DfW"/>
+                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="trailing" secondItem="15q-jS-qtR" secondAttribute="trailing" constant="20" id="IZa-vW-Y5w"/>
+                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="trailing" secondItem="6Qp-jm-JaV" secondAttribute="trailing" constant="20" id="SYw-8T-q2i"/>
+                            <constraint firstItem="6Qp-jm-JaV" firstAttribute="leading" secondItem="XZo-pm-Xj4" secondAttribute="leading" constant="20" id="ScA-Vq-ecp"/>
+                            <constraint firstItem="15q-jS-qtR" firstAttribute="leading" secondItem="XZo-pm-Xj4" secondAttribute="leading" constant="20" id="eSQ-ME-Fwb"/>
+                            <constraint firstItem="XZo-pm-Xj4" firstAttribute="bottom" secondItem="15q-jS-qtR" secondAttribute="bottom" constant="21" id="ucB-SN-3pG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XZo-pm-Xj4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="x0v-kV-6sV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="z4c-sw-8EI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Vm-Cu-9yz">
-                                <rect key="frame" x="160" y="149" width="94" height="30"/>
+                                <rect key="frame" x="300" y="7" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Program"/>
                                 <connections>
@@ -189,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="786.95652173913049" y="61.607142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Programs Details-->
         <scene sceneID="I0w-Bp-tf1">
             <objects>
-                <viewController id="Seu-Tl-ABb" sceneMemberID="viewController">
+                <viewController id="Seu-Tl-ABb" customClass="ProgramsDetails" customModule="EVolunteers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E3p-Sk-ded">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,17 +208,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-37-xjn">
                                 <rect key="frame" x="118" y="373.5" width="18" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w6e-bd-CF3">
                                 <rect key="frame" x="18" y="374" width="18" height="15.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZtO-OK-4Qd">
                                 <rect key="frame" x="245" y="374" width="18" height="15.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minggu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbC-Tu-7mh">
                                 <rect key="frame" x="41" y="373" width="69" height="18"/>
@@ -255,14 +241,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-dN-sXm">
-                                <rect key="frame" x="19" y="817" width="376" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Daftar Jadi Relawan">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tugas Relawan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-Mo-Tx8">
                                 <rect key="frame" x="20" y="405" width="374" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -315,7 +293,7 @@
                                                     <rect key="frame" x="21" y="4" width="28" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -331,11 +309,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-dN-sXm">
+                                <rect key="frame" x="20" y="817" width="376" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Daftar Jadi Relawan">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qEb-yf-mJe"/>
                     </view>
                     <navigationItem key="navigationItem" id="i0Q-PB-G7m"/>
+                    <connections>
+                        <outlet property="communityName" destination="MGl-fR-lb0" id="2sx-zA-Yrh"/>
+                        <outlet property="dayToJoin" destination="rbC-Tu-7mh" id="IcJ-F9-txp"/>
+                        <outlet property="dueDate" destination="x1n-rt-qpD" id="fFP-9g-rSp"/>
+                        <outlet property="imageCover" destination="7mx-hu-Stm" id="wGr-Kg-QI7"/>
+                        <outlet property="neededCollection" destination="xaA-kw-F4f" id="f74-DY-Y1T"/>
+                        <outlet property="placement" destination="WNq-3Y-2Sm" id="Wpu-CQ-6US"/>
+                        <outlet property="profileImage" destination="jko-D0-ZCx" id="KsB-G1-M9p"/>
+                        <outlet property="volunteryCriteria" destination="h7o-SJ-nNd" id="6yu-tf-dBn"/>
+                        <outlet property="volunteryJobs" destination="zQa-gg-xRh" id="ee1-Tx-X4j"/>
+                        <outlet property="volunteryJoined" destination="ZJB-SW-2eC" id="1A1-ip-jQj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kox-ie-Yzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,7 +361,7 @@
     <resources>
         <image name="Rectangle" width="163" height="95"/>
         <image name="Untitled design" width="1500" height="500"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="mappin.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

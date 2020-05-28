@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E2E1FED247DEAA900F544CC /* NewProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E1FEA247DEAA900F544CC /* NewProgramViewController.swift */; };
 		1E2E1FEE247DEAA900F544CC /* NewProgramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E1FEB247DEAA900F544CC /* NewProgramViewController.storyboard */; };
+		42527897247E686F00308E68 /* ProgramsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42527896247E686F00308E68 /* ProgramsDetails.swift */; };
 		42B81528247CD565001E6A2F /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81527247CD565001E6A2F /* Program.swift */; };
 		42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */; };
 		5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C273B49246A35F600505C8D /* AppDelegate.swift */; };
@@ -42,7 +43,7 @@
 		5C926F53247D9611009AFD19 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F50247D9611009AFD19 /* CollectionViewCell.xib */; };
 		5C926F56247D9638009AFD19 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F54247D9638009AFD19 /* EditProfileVC.swift */; };
 		5C926F57247D9638009AFD19 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C926F55247D9638009AFD19 /* EditProfile.storyboard */; };
-		CE6297EF247E387000D3DA82 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6297EE247E387000D3DA82 /* Members.swift */; };
+		5C926F5D247E0693009AFD19 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C926F5C247E0693009AFD19 /* Members.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1E2E1FEA247DEAA900F544CC /* NewProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProgramViewController.swift; sourceTree = "<group>"; };
 		1E2E1FEB247DEAA900F544CC /* NewProgramViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewProgramViewController.storyboard; sourceTree = "<group>"; };
+		42527896247E686F00308E68 /* ProgramsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsDetails.swift; sourceTree = "<group>"; };
 		42B81527247CD565001E6A2F /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		42BCF86F247CF7F20049A10B /* ProgramsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewCell.swift; sourceTree = "<group>"; };
 		5C273B46246A35F600505C8D /* EVolunteers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVolunteers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +106,7 @@
 		5C926F50247D9611009AFD19 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		5C926F54247D9638009AFD19 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		5C926F55247D9638009AFD19 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
-		CE6297EE247E387000D3DA82 /* Members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
+		5C926F5C247E0693009AFD19 /* Members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +260,7 @@
 		5C273B95246A3BEF00505C8D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CE6297EE247E387000D3DA82 /* Members.swift */,
+				5C926F5C247E0693009AFD19 /* Members.swift */,
 				5C926F55247D9638009AFD19 /* EditProfile.storyboard */,
 				5C926F54247D9638009AFD19 /* EditProfileVC.swift */,
 				5C273BA0246A3C8900505C8D /* ProfileViewController.swift */,
@@ -275,6 +277,7 @@
 				5C273B9C246A3C6000505C8D /* Programs.storyboard */,
 				5C273B9E246A3C6B00505C8D /* ProgramsViewController.swift */,
 				42B81527247CD565001E6A2F /* Program.swift */,
+				42527896247E686F00308E68 /* ProgramsDetails.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C926F3E247C46E1009AFD19 /* CloudKitService.swift in Sources */,
+				42527897247E686F00308E68 /* ProgramsDetails.swift in Sources */,
 				5C273B8A246A38E700505C8D /* UIViewController+Extension.swift in Sources */,
 				5C273B86246A38E700505C8D /* CoreData.xcdatamodeld in Sources */,
 				5C926F3A247BFD8F009AFD19 /* CloudKitProtocol.swift in Sources */,
@@ -492,7 +496,6 @@
 				5C273B99246A3C2700505C8D /* MyActivityViewController.swift in Sources */,
 				5C926F52247D9611009AFD19 /* CollectionViewCell.swift in Sources */,
 				5C273B94246A3BDD00505C8D /* MainTabBarController.swift in Sources */,
-				CE6297EF247E387000D3DA82 /* Members.swift in Sources */,
 				5C273BA1246A3C8900505C8D /* ProfileViewController.swift in Sources */,
 				5C273B4A246A35F600505C8D /* AppDelegate.swift in Sources */,
 				5C273B9F246A3C6B00505C8D /* ProgramsViewController.swift in Sources */,
@@ -502,6 +505,7 @@
 				5C273B87246A38E700505C8D /* UIDevice+Extension.swift in Sources */,
 				5C273B4C246A35F600505C8D /* SceneDelegate.swift in Sources */,
 				42BCF870247CF7F20049A10B /* ProgramsViewCell.swift in Sources */,
+				5C926F5D247E0693009AFD19 /* Members.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,8 +671,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -678,7 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -689,8 +693,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EVolunteers/EVolunteers.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LP7LYQXQ3;
 				INFOPLIST_FILE = "EVolunteers/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -700,7 +704,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apple.academy.EVolunteers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Team Provisioning Profile: apple.academy.EVolunteers";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

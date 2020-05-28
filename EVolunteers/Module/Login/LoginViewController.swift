@@ -100,25 +100,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", "\(email)"])
                 Members.query(predicate: predicate, result: { (users) in
                     if let users = users, users.count == 0 {
-                        Members(namaLengkap: "\(fullName?.givenName ?? "")", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
-                            self.dismiss(animated: true, completion: nil)
-                        }) { (error) in
-                            self.showViewBottom()
-                            print(error)
-                        }
+                        self.saveNewMembers(fullName: fullName?.givenName ?? "", email: email)
                     } else {
-                        self.dismiss(animated: true, completion: nil)
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }) { (error) in
                     self.showViewBottom()
                     print(error)
                 }
             }
-            
-//            self.delay(2) {
-//                self.dismiss(animated: true, completion: nil)
-//            }
-            
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
             let password = passwordCredential.password
@@ -129,6 +121,16 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             self.dismiss(animated: true, completion: nil)
         default:
             break
+        }
+    }
+    
+    func saveNewMembers(fullName: String, email: String) {
+        Members(namaLengkap: "\(fullName)", pendidikan: "", jabatan: "", email: "\(email)", alamat: "").save(result: { (result) in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }) { (error) in
+            self.showViewBottom()
         }
     }
     
@@ -166,4 +168,59 @@ extension LoginViewController {
 //        self.present(vc, animated: true)
 //    }
     
+//    func save(){
+//        CK_User(name: "deydey").save(result: { (users) in
+//            print("users : \(users?.name ?? "")")
+//        }) { (error) in
+//
+//        }
+//    }
+//
+//    func get(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa"])
+//        CK_User.query(predicate: predicate, result: { (users) in
+//            if let users = users {
+//                self.users = users
+//                print(users.count)
+//            }
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
+//    func getAll(){
+//        let sortCreation = NSSortDescriptor(key: "creationDate", ascending: false)
+//        CK_User.all(inDatabase: CKContainer.default().publicCloudDatabase, withSortDescriptors : [sortCreation], result: { (users) in
+//            if let users = users {
+//                self.users = users
+//                print(users.count)
+//            }
+//        }) { (error) in
+//            print(error)
+//        }
+//    }
+//
+//    func update(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa"])
+//        CK_User(name: "fofo").update(predicate: predicate, result: { (users) in
+//            if let users = users {
+//
+//            }
+//        }) { (error) in
+//            print("error update")
+//        }
+//    }
+//
+//    func delete(){
+//        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["name", "fafa2"])
+//        CK_User.delete(predicate: predicate) {
+//            print("deleted record")
+//        }
+//    }
+//
+//    func deleteAll(){
+//        CK_User.deleteAll {
+//            print("deleted all records")
+//        }
+//    }
 }

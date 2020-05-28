@@ -19,8 +19,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userPhone: UILabel!
     @IBOutlet weak var userTTL: UILabel!
+    @IBOutlet weak var userJabatan: UILabel!
     
     @IBOutlet weak var userPrograms: UILabel!
+    
+    let email = PreferenceManager.instance.userEmail ?? ""
+    let nama = PreferenceManager.instance.userName ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +37,32 @@ class ProfileViewController: UIViewController {
         profileImage.layer.borderColor = UIColor.init(hex: 0x000000).cgColor
         
         usersView()
+        get()
+        
     }
     
     func usersView(){
-        
-        let email = PreferenceManager.instance.userEmail
-        let nama = PreferenceManager.instance.userName
-        
         
         userNama.text = nama
         userLokasi.text = ""
         userEmail.text = email
         userPhone.text = ""
         userTTL.text = ""
+        userJabatan.text = ""
     }
+    
+    func get() {
+        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
+        Members.query(predicate: predicate, result: { (foundMembers) in
+            if let foundMember = foundMembers?.first {
+                let alamat = foundMember.record?.value(forKey: "alamat")
+                let phone = foundMember.record?.value(forKey: "mobilePhone")
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
 }
 
 extension UIColor {

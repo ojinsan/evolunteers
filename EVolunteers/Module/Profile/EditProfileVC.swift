@@ -17,17 +17,12 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var editNama: UITextField!
-    @IBOutlet weak var editTempatLahir: UITextField!
-    @IBOutlet weak var editTanggalLahir: UITextField!
+    @IBOutlet weak var editMobilePhone: UITextField!
     @IBOutlet weak var editJabatan: UITextField!
-    @IBOutlet weak var editHandphone: UITextField!
+    @IBOutlet weak var editPendidikan: UITextField!
+    @IBOutlet weak var editAlamat: UITextField!
     
     @IBOutlet weak var saveChanges: UIButton!
-    
-    //    var tempNama: String = ""
-    //    var tempJabatan: String = ""
-    //    var tempTempatLahir: String = ""
-    //    var tempNoHandphone: String = ""
     
     var email = PreferenceManager.instance.userEmail
     var nama = PreferenceManager.instance.userName
@@ -47,7 +42,6 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapOnScreen)
         
         editNama.text = nama
-        editTempatLahir.text = email
         
     }
     
@@ -63,58 +57,41 @@ class EditProfileVC: UIViewController, UITextFieldDelegate {
         Members.query(predicate: predicate, result: { (users) in
             if let users = users {
 //                self.users = users
+                print(users)
                 print(users.count)
             }
         }) { (error) in
             print(error)
         }
         
-        //        let predicate = NSPredicate(value: true)
-        //
-        //        usersRecord = CKRecord(recordType: "Members")
-        //
-        //        let query = CKQuery(recordType: "Members", predicate: predicate)
-        //        query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
-        //
-        //        let operation = CKQueryOperation(query: query)
-        //
-        ////        titles.removeAll()
-        ////        recordIDs.removeAll()
-        //
-        //        operation.recordFetchedBlock = { record in
-        //
-        ////            titles.append(record["title"]!)
-        ////            recordIDs.append(record.recordID)
-        //
-        //        }
-        //
-        //        operation.queryCompletionBlock = { cursor, error in
-        //
-        //            DispatchQueue.main.async {
-        //
-        //                let name = record.value(forKeyPath: "Name") as! String
-        ////                print("Titles: \(titles)")
-        ////                print("RecordIDs: \(recordIDs)")
-        //
-        //            }
-        //
-        //        }
+        let editNama = self.editNama.text! as String
+        let editJabatan = self.editJabatan.text! as String
+        let editMobilePhone = self.editMobilePhone.text! as String
+        let editPendidikan = self.editPendidikan.text! as String
+        let editAlamat = self.editAlamat.text! as String
         
-//        privateDatabase.add(operation)
-        
-        
-//        let editNama = self.editNama.text! as NSString
-//        let editJabatan = self.editJabatan.text! as NSString
-//        let editTempatLahir = self.editTempatLahir.text! as NSString
-//        let editHandphone = self.editHandphone.text! as NSString
-//
-//        usersRecord = CKRecord(recordType: "Members")
-//
-//        //Record
-//        usersRecord?.setObject(editNama, forKey: "namaLengkap")
-//        usersRecord?.setObject(editJabatan, forKey: "jabatan")
-//        usersRecord?.setObject(editTempatLahir, forKey: "tempatLahir")
-//        usersRecord?.setObject(editHandphone, forKey: "handphone")
-        
+        update(pendidikan: editPendidikan, jabatan: editJabatan, alamat: editAlamat, namaLengkap: editNama, mobilePhone: editMobilePhone)
+    }
+    
+    func update(pendidikan: String, jabatan: String, alamat: String, namaLengkap: String, mobilePhone: String){
+        let email = PreferenceManager.instance.userEmail ?? ""
+        let predicate = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
+        Members.query(predicate: predicate, result: { (foundMembers) in
+            if let foundMember = foundMembers?.first {
+                foundMember.record?.setValue("\(alamat)", forKey: "alamat")
+                foundMember.record?.setValue("\(jabatan)", forKey: "jabatan")
+                foundMember.record?.setValue("\(pendidikan)", forKey: "pendidikan")
+                foundMember.record?.setValue("\(namaLengkap)", forKey: "namaLengkap")
+                foundMember.record?.setValue("\(mobilePhone)", forKey: "mobilePhone")
+                foundMember.save(result: { (foundMembers) in
+                    print("Success")
+                }) { (error) in
+                    print("error")
+                }
+                
+            }
+        }) { (error) in
+            print(error)
+        }
     }
 }
