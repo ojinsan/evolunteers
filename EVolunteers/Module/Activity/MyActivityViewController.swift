@@ -174,7 +174,19 @@ extension MyActivityViewController: UICollectionViewDelegateFlowLayout {
 
 extension ProgramsViewController {
     
+    func toLogin() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(vc, animated: true)
+    }
+    
     func daftarProgram(programs: Programs) {
+        
+        if !PreferenceManager.instance.isUserLogin {
+            toLogin()
+            return
+        }
+        
         let email = PreferenceManager.instance.userEmail ?? ""
         let programId: CKRecord.ID = CKRecord.ID(recordName: "\(programs.record?.recordID.recordName ?? "")")
         let predicateMembers = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
