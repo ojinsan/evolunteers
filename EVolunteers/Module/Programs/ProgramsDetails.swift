@@ -47,6 +47,8 @@ class ProgramsDetails: UIViewController {
         profileImage.clipsToBounds = true
         
         if let data = data {
+            self.checkButtonVoluntary(programs: data)
+            
             communityName.text = data.judulProgram
             imageCover.image = data.image
             profileImage.image = data.image
@@ -98,6 +100,51 @@ extension ProgramsDetails: UICollectionViewDelegate, UICollectionViewDataSource 
 
 extension ProgramsDetails {
     
+    func showAlertSuccess() {
+        let alert = UIAlertController(title: "Terimakasih", message: "Pendaftaran Komunitas anda telah berhasil. Mohon tunggu 1 x 24 jam untuk kami memvalidasi data anda", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                    print("default")
+
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+        }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkButtonVoluntary(programs: Programs) {
+        let email = PreferenceManager.instance.userEmail ?? ""
+        let programId: CKRecord.ID = CKRecord.ID(recordName: "\(programs.record?.recordID.recordName ?? "")")
+        let predicateMembers = NSPredicate(format: "%K == %@", argumentArray: ["email", email])
+        let predicatePrograms = NSPredicate(format: "recordID=%@", programId)
+        Members.query(predicate: predicateMembers, result: { (foundMembers) in
+            if let foundMember = foundMembers?.first, let foundMemberRecord = foundMember.record {
+                let foundMemberReference: CKRecord.Reference = CKRecord.Reference(record: foundMemberRecord, action: .none)
+                Programs.query(predicate: predicatePrograms, result: { (foundPrograms) in
+                    if let foundProgram = foundPrograms?.first, let foundProgramRecord = foundProgram.record {
+                        
+                        // already registered programs
+                        if self.checkVolunteersAndProgramsIsRegistered(foundProgram: foundProgram, foundMember: foundMember) {
+                            DispatchQueue.main.async {
+                                self.buttonBecomeVoluntery.backgroundColor = UIColor.gray
+                            }
+                            return
+                        }
+                        
+                    }
+                }) { (error) in
+                    print(error)
+                }
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
     func toLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -123,6 +170,9 @@ extension ProgramsDetails {
                         
                         // already registered programs
                         if self.checkVolunteersAndProgramsIsRegistered(foundProgram: foundProgram, foundMember: foundMember) {
+                            DispatchQueue.main.async {
+                                self.buttonBecomeVoluntery.backgroundColor = UIColor.gray
+                            }
                             return
                         }
                         
@@ -132,8 +182,10 @@ extension ProgramsDetails {
                         listRegisteredVolunteers?.append(foundMemberReference)
                         foundProgram.record?.setValue(listRegisteredVolunteers, forKey: "registeredVolunteers")
                         foundProgram.save(result: { (savedPrograms) in
-                            
-                            
+                            DispatchQueue.main.async {
+                                self.buttonBecomeVoluntery.backgroundColor = UIColor.gray
+                                self.showAlertSuccess()
+                            }
                         }) { (error) in
                         }
                         

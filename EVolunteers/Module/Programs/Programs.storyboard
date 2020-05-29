@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -304,12 +304,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-dN-sXm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-dN-sXm">
                                 <rect key="frame" x="19" y="793" width="376" height="45"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dWs-z9-u0F"/>
-                                    <constraint firstAttribute="width" constant="376" id="vF0-Nj-I8b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -318,7 +317,7 @@
                                     <color key="titleShadowColor" red="0.37254901959999998" green="0.65490196079999996" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="becomeVoluntery:" destination="Seu-Tl-ABb" eventType="touchUpInside" id="T1t-CE-mhC"/>
+                                    <action selector="becomeVoluntery:" destination="Seu-Tl-ABb" eventType="touchUpInside" id="1xq-iH-tyZ"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x9u-Ak-tiE">
@@ -373,7 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="i0Q-PB-G7m"/>
                     <connections>
-                        <outlet property="buttonBecomeVoluntery" destination="9sD-dN-sXm" id="iCz-tj-a2y"/>
+                        <outlet property="buttonBecomeVoluntery" destination="9sD-dN-sXm" id="216-YN-Ckg"/>
                         <outlet property="categoryCV" destination="x9u-Ak-tiE" id="dVv-3e-XWg"/>
                         <outlet property="communityName" destination="MGl-fR-lb0" id="2sx-zA-Yrh"/>
                         <outlet property="dayToJoin" destination="rbC-Tu-7mh" id="IcJ-F9-txp"/>
@@ -413,7 +412,7 @@
     <resources>
         <image name="Rectangle" width="163" height="95"/>
         <image name="Untitled design" width="1500" height="500"/>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="mappin.circle" catalog="system" width="64" height="60"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
